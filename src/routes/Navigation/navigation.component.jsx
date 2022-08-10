@@ -14,13 +14,13 @@ const Navigation = () => {
       <NavigationContainer>
         <NavLinks>
           <NavLink to='/'>Home</NavLink> 
-          <NavLink to='/uslugi'>Uslugi</NavLink>
-          <NavLink to='/aboutus'>About us</NavLink> 
-          <NavLink to='/commerce'>Commerce</NavLink> 
-          <NavLink to='/kotetg'>Kotetgi</NavLink> 
-          <NavLink to='/novostroiki'>Novostroiki</NavLink> 
-          <NavLink to='/sales'>Sales</NavLink> 
-          <NavLink to='/rent'>Rent</NavLink>         
+          <NavLink to='/uslugi'>Услуги</NavLink>
+          <NavLink to='/aboutus'>О компании</NavLink> 
+          <NavLink to='/commerce'>Коммерческая</NavLink> 
+          <NavLink to='/kotetg'>Котетджные поселки</NavLink> 
+          <NavLink to='/novostroiki'>Новостройки</NavLink> 
+          <NavLink to='/sales'>Продажа</NavLink> 
+          <NavLink to='/rent'>Аренда</NavLink>         
         </NavLinks>
       </NavigationContainer>
       <Outlet />
