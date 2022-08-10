@@ -4,7 +4,7 @@ import Directory from '../../components/directory.component.jsx/directory.compon
 
 const Home = () => {
     return(
-       <div> Домашняя Страница
+       <div> 
        <Directory />
        <Outlet/>
        </div>
