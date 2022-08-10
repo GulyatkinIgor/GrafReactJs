@@ -4,18 +4,19 @@ import { Routes, Route } from "react-router-dom";
 
 import Navigation from "./components/navigation.component.jsx"
 
-import Home from "./routes/Home";
-import AboutUs from "./routes/AboutUs";
-import Uslugi from "./routes/Uslugi";
-import Sales from "./routes/Sales";
-import Novostroiki from "./routes/Novostroiki";
-import Kotetg from "./routes/Kotetg";
-import Commerce from "./routes/Commerce";
-import Ipoteka from "./routes/Ipoteka";
-import Rent from "./routes/Rent";
+import Home from "./routes/Home/home.component.jsx";
+import AboutUs from "./routes/AboutUs/aboutus.component.jsx";
+import Uslugi from "./routes/Uslugi/uslugi.component.jsx";
+import Sales from "./routes/Sales/sales.component.jsx";
+import Novostroiki from "./routes/Novostroiki/novostroiki.component.jsx";
+import Kotetg from "./routes/Kotetg/kotetg.component.jsx";
+import Commerce from "./routes/Commerce/commerce.component.jsx";
+import Ipoteka from "./routes/Ipoteka/ipoteka.component.jsx";
+import Rent from "./routes/Rent/rent.component.jsx";
 
-function App() {
-  return (
+const App = () => {
+   return (
+    
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
