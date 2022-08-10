@@ -1,24 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+
+import { Routes, Route } from "react-router-dom";
+
+import Home from "./routes/Home";
+import AboutUs from "./routes/AboutUs";
+import Uslugi from "./routes/Uslugi";
+import Sales from "./routes/Sales";
+import Novostroiki from "./routes/Novostroiki";
+import Kotetg from "./routes/Kotetg";
+import Commerce from "./routes/Commerce";
+import Ipoteka from "./routes/Ipoteka";
+import Rent from "./routes/Rent";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="aboutus" element={<AboutUs />} />
+        <Route path="uslugi" element={<Uslugi />} />
+        <Route path="sales" element={<Sales />} />
+        <Route path="novostroiki" element={<Novostroiki />} />
+        <Route path="kotetg" element={<Kotetg />} />
+        <Route path="commerce" element={<Commerce />} />
+        <Route path="ipoteka" element={<Ipoteka />} />
+        <Route path="rent" element={<Rent />} />
+      </Route>
+    </Routes>
   );
 }
 
