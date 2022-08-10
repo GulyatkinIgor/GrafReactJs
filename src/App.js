@@ -2,6 +2,8 @@ import "./App.css";
 
 import { Routes, Route } from "react-router-dom";
 
+import Navigation from "./components/navigation.component.jsx"
+
 import Home from "./routes/Home";
 import AboutUs from "./routes/AboutUs";
 import Uslugi from "./routes/Uslugi";
