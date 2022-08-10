@@ -16,9 +16,7 @@ import Rent from './routes/Rent/rent.component';
 
 const App = () => {
    
-    return (    
-
-      
+    return (        
     <Routes>
       <Route path="/" element={<Navigation />}>
         <Route index element={<Home />} />
