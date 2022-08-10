@@ -13,7 +13,14 @@ const Navigation = () => {
     <Fragment>
       <NavigationContainer>
         <NavLinks>
-          <NavLink to='/uslugi'>Uslugi</NavLink>        
+          <NavLink to='/'>Home</NavLink> 
+          <NavLink to='/uslugi'>Uslugi</NavLink>
+          <NavLink to='/aboutus'>About us</NavLink> 
+          <NavLink to='/commerce'>Commerce</NavLink> 
+          <NavLink to='/kotetg'>Kotetgi</NavLink> 
+          <NavLink to='/novostroiki'>Novostroiki</NavLink> 
+          <NavLink to='/sales'>Sales</NavLink> 
+          <NavLink to='/rent'>Rent</NavLink>         
         </NavLinks>
       </NavigationContainer>
       <Outlet />
