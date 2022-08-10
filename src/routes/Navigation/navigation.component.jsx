@@ -1,10 +1,13 @@
 import { Fragment } from 'react';
 import { Outlet } from 'react-router-dom';
 
+import { ReactComponent as CrwnLogo } from '../../assets/logo.svg';
+
 import {
   NavigationContainer,
   NavLinks,
   NavLink,
+  LogoContainer,
   } from './navigation.styles';
 
 const Navigation = () => {
@@ -13,7 +16,9 @@ const Navigation = () => {
     <Fragment>
       <NavigationContainer>
         <NavLinks>
-          <NavLink to='/'>Home</NavLink> 
+        <LogoContainer to='/'>
+          <CrwnLogo className='logo' />
+        </LogoContainer>
           <NavLink to='/uslugi'>Услуги</NavLink>
           <NavLink to='/aboutus'>О компании</NavLink> 
           <NavLink to='/commerce'>Коммерческая</NavLink> 
