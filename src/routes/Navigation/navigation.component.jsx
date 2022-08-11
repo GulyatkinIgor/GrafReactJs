@@ -7,6 +7,7 @@ import {
   NavLinks,
   NavLink,
   LogoContainer,
+  Nomer,
   } from './navigation.styles';
 
 const Navigation = () => {
@@ -26,7 +27,11 @@ const Navigation = () => {
           <NavLink to='/sales'>Продажа</NavLink> 
           <NavLink to='/rent'>Аренда</NavLink>         
         </NavLinks>
+        <Nomer>
+          <div>г.Казань ул.Ф.Амирхана 12А 89520379479</div>
+        </Nomer>
       </NavigationContainer>
+     
       <Outlet />
     </Fragment>
   );

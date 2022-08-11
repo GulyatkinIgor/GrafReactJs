@@ -21,10 +21,18 @@ export const NavLinks = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
 `;
 
 export const NavLink = styled(Link)`
   padding: 20px 20px;
   flex-direction: row;
   cursor: pointer;
+`;
+
+export const Nomer = styled.div`
+margin-top: 20px;
+margin-right: 20px;
 `;
