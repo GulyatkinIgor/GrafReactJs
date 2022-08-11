@@ -6,6 +6,7 @@ const Commerce = () => {
        <div>
        <Navigation/>
 
+       
 
        Страница о комерции
        
