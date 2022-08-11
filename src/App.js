@@ -26,12 +26,12 @@ export default class App extends React.Component {
   }
 
   getDataApparts = async () => {
-    console.log("fetch", "start");
+    console.log("fetch HOME", "start");
     const dataAppart = await axios.get(`http://localhost:3000/api/aparts`);
-    console.log("fetch", "wait");
-    console.log("fetch", dataAppart.request.response);
+    console.log("fetch HOME", "wait");
+    console.log("fetch HOME", dataAppart.request.response);
     const dataJson = JSON.parse(dataAppart.request.response);
-    console.log("done", dataJson);
+    console.log("done HOME", dataJson);
     this.setState({
       data: dataJson,
       isLoading: false,
