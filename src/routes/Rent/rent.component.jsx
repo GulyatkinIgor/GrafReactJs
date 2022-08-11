@@ -1,6 +1,15 @@
+import Footer from "../Footer/footer.component";
+import Navigation from "../Navigation/navigation.component";
+
 const Rent = () => {
     return(
-       <div> Аренда Страница</div>
+       <div>
+       <Navigation/>
+
+       Аренда Страница
+       
+       <Footer/>
+</div>
     );
    }
    

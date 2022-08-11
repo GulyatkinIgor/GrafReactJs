@@ -1,6 +1,14 @@
+import Footer from "../Footer/footer.component";
+import Navigation from "../Navigation/navigation.component";
+
 const Uslugi = () => {
     return(
-       <div> Услуги Страница</div>
+       <div>
+       <Navigation/>
+
+      <Footer/>
+
+       </div>
     );
    }
    

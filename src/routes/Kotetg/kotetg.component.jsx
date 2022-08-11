@@ -1,6 +1,15 @@
+import Footer from "../Footer/footer.component";
+import Navigation from "../Navigation/navigation.component";
+
 const Cottage = () => {
     return(
-       <div> Коттедж Страница</div>
+       <div> 
+       <Navigation/>
+       
+       Коттедж Страница
+       
+       <Footer/>
+       </div>
     );
    }
    

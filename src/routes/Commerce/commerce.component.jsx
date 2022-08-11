@@ -1,6 +1,16 @@
+import Navigation from "../Navigation/navigation.component"
+import Footer from "../Footer/footer.component"
+
 const Commerce = () => {
     return(
-       <div> Страница о комерции</div>
+       <div>
+       <Navigation/>
+
+
+       Страница о комерции
+       
+       <Footer/>
+      </div>
     );
    }
    

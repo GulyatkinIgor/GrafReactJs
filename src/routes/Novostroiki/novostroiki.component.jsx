@@ -1,6 +1,15 @@
+import Navigation from "../Navigation/navigation.component";
+import Footer from "../Footer/footer.component";
+
 const Novostroiki = () => {
     return(
-       <div> Новостройки Страница</div>
+       <div> 
+       <Navigation/>
+
+       Новостройки Страница
+       
+       <Footer/>
+</div>
     );
    }
    
