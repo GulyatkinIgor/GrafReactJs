@@ -1,5 +1,13 @@
-import React from "react";
+import Footer from "./routes/Footer/footer.component";
+import Navigation from "./routes/Navigation/navigation.component";
 
-export default function Loading() {
-  return;
-}
+const Loading = () => {
+  return (
+    <div>
+      <Navigation />
+      Loading...
+      <Footer />
+    </div>
+  );
+};
+export default Loading;
