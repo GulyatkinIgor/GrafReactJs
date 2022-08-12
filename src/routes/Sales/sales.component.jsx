@@ -7,6 +7,7 @@ import { CarouselContainer } from '../Home/home.styles';
 import { useState } from "react";
 import getDataSales from "../../Utils/FetchDataAppart.component";
 import SaleCardList from "./salesCard-list/card-list.component";
+import Loading from "../../Loading";
 
 
 class Sales extends React.Component {
@@ -14,6 +15,7 @@ class Sales extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading: true,
       data: []
     };
   }
@@ -27,6 +29,7 @@ class Sales extends React.Component {
     console.log("done  Sales", dataJson);
     this.setState({
       data: dataJson,
+      isLoading: false
     });
   };
 
@@ -36,11 +39,11 @@ class Sales extends React.Component {
 
 
   render() {
-    const {data} = this.state
+    const {isLoading, data} = this.state
     const dataAparts = data
     console.log("dataApart", dataAparts)
 
-    return(
+    return isLoading ? <Loading /> : (
        <div>
        <Navigation/>
 
