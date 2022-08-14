@@ -2,12 +2,13 @@ import React from "react";
 import axios from "axios"
 import Footer from "../Footer/footer.component";
 import Navigation from "../Navigation/navigation.component";
-
+import Carousel from '../../components/carousel/carousel.component';
+import { CarouselContainer } from '../Home/home.styles';
 import { useState } from "react";
 import getDataSales from "../../Utils/FetchDataAppart.component";
 import SaleCardList from "./salesCard-list/card-list.component";
 import Loading from "../../Loading";
-import Buttons from "../../components/buttons/buttons.component";
+import Buttons from "./component/buttons/buttons.component";
 
 
 class Sales extends React.Component {
@@ -16,13 +17,16 @@ class Sales extends React.Component {
     super(props);
     this.state = {
       isLoading: true,
+      requestType: "api/sale/",
       data: []
     };
   }
 
+
   getDataApparts = async () => {
+    const {requestType} = this.state
     console.log("fetch Sales", "start");
-    const dataAppart = await axios.get(`http://localhost:3000/api/sale`);
+    const dataAppart = await axios.get(`http://localhost:3000/`+ requestType);
     console.log("fetch Sales", "wait");
     console.log("fetch Sales", dataAppart.request.response);
     const dataJson = JSON.parse(dataAppart.request.response);
@@ -32,6 +36,8 @@ class Sales extends React.Component {
       isLoading: false
     });
   };
+
+
 
   componentDidMount() {
     this.getDataApparts();
@@ -46,9 +52,13 @@ class Sales extends React.Component {
     return isLoading ? <Loading /> : (
        <div>
        <Navigation/>
-       <Buttons/>
-       <SaleCardList dataAparts={dataAparts}/>
 
+       Продажи Страница
+       <CarouselContainer>
+         <Carousel/>
+       </CarouselContainer>
+       <Buttons ChangeData={this.ChangeData} />
+       <SaleCardList dataAparts={dataAparts}/>
      <Footer/>
 </div>
     );
