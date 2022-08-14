@@ -1,9 +1,8 @@
 import React from "react";
 import axios from "axios"
-import Footer from "../Footer/footer.component";
-import Navigation from "../Navigation/navigation.component";
-import Carousel from '../../components/carousel/carousel.component';
-import { CarouselContainer } from '../Home/home.styles';
+import Footer from "../../components/Footer/footer.component";
+import Navigation from "../../components/Navigation/navigation.component";
+
 import { useState } from "react";
 import getDataSales from "../../Utils/FetchDataAppart.component";
 import SaleCardList from "./salesCard-list/card-list.component";
@@ -46,11 +45,7 @@ class Sales extends React.Component {
     return isLoading ? <Loading /> : (
        <div>
        <Navigation/>
-
        Продажи Страница
-       <CarouselContainer>
-         <Carousel/>
-       </CarouselContainer>
        <SaleCardList dataAparts={dataAparts}/>
      <Footer/>
 </div>
