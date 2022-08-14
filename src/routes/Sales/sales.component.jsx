@@ -7,6 +7,7 @@ import { useState } from "react";
 import getDataSales from "../../Utils/FetchDataAppart.component";
 import SaleCardList from "./salesCard-list/card-list.component";
 import Loading from "../../Loading";
+import Buttons from "../../components/buttons/buttons.component";
 
 
 class Sales extends React.Component {
@@ -21,7 +22,7 @@ class Sales extends React.Component {
 
   getDataApparts = async () => {
     console.log("fetch Sales", "start");
-    const dataAppart = await axios.get(`http://localhost:3000/api/aparts`);
+    const dataAppart = await axios.get(`http://localhost:3000/api/sale`);
     console.log("fetch Sales", "wait");
     console.log("fetch Sales", dataAppart.request.response);
     const dataJson = JSON.parse(dataAppart.request.response);
@@ -45,8 +46,9 @@ class Sales extends React.Component {
     return isLoading ? <Loading /> : (
        <div>
        <Navigation/>
-       Продажи Страница
+       <Buttons/>
        <SaleCardList dataAparts={dataAparts}/>
+
      <Footer/>
 </div>
     );

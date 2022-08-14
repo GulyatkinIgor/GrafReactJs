@@ -1,8 +1,8 @@
 import Navigation from "../Navigation/navigation.component"
 import Footer from "../Footer/footer.component"
-import CommerceCardList from "../ComerceList/ComerceCardList.component";
 import React from "react";
 import axios from "axios"
+import Buttons from "../../components/buttons/buttons.component";
 
 
 class Commerce extends React.Component {
@@ -37,7 +37,7 @@ class Commerce extends React.Component {
     return(
        <div>
        <Navigation/>
-       <CommerceCardList  dataAparts={dataAparts}/>
+        <Buttons/>
        <Footer/>
       </div>
     );
