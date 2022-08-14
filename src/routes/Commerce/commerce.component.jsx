@@ -1,6 +1,6 @@
 import Navigation from "../Navigation/navigation.component"
 import Footer from "../Footer/footer.component"
-import CommerceCardList from "./ComerceList/ComerceCardList.component";
+import CommerceCardList from "../ComerceList/ComerceCardList.component";
 import React from "react";
 import axios from "axios"
 
