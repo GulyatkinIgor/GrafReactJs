@@ -1,5 +1,5 @@
-import Footer from "./components/Footer/footer.component";
-import Navigation from "./components/Navigation/navigation.component";
+import Footer from "./routes/Footer/footer.component";
+import Navigation from "./routes/Navigation/navigation.component";
 
 const Loading = () => {
   return (

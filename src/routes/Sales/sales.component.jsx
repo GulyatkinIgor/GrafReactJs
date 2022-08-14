@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios"
-import Footer from "../../components/Footer/footer.component";
-import Navigation from "../../components/Navigation/navigation.component";
+import Footer from "../Footer/footer.component";
+import Navigation from "../Navigation/navigation.component";
 
 import { useState } from "react";
 import getDataSales from "../../Utils/FetchDataAppart.component";
