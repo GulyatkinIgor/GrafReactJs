@@ -1,19 +1,17 @@
-import Carousel from '../../../components/carousel/carousel.component';
-import { CarouselContainer } from '../../Home/home.styles';
-import SaleCard from '../salesCard/card.component';
 import './card-list.styles.css';
 
-const SaleCardList = ({ dataAparts }) => {
+const SaleCardList = ({ turnItem , dataAparts }) => {
 
-  function click(data){
-    console.log("ZALUPA",data)
+  const click = (item) => {
+    console.log("PIZZZZZZZZZDA", item)
+    turnItem.onitem()
   }
 
   return(
     <div className='card-list'>
-        {dataAparts.map((data,Id)=>{
+        {dataAparts.map((data)=>{
           return(
-        <a href="/Item">
+        <button Id={data.Id._text} onClick={() => click(data)}>
             <div>
         <a class="block relative h-48 rounded overflow-hidden">
           
@@ -24,7 +22,7 @@ const SaleCardList = ({ dataAparts }) => {
           <p class="mt-1">{data.Price._text}</p>
         </div>
       </div>
-        </a>            
+        </button>            
   
           )
 

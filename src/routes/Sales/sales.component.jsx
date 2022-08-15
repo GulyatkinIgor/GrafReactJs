@@ -9,6 +9,7 @@ import getDataSales from "../../Utils/FetchDataAppart.component";
 import SaleCardList from "./salesCard-list/card-list.component";
 import Loading from "../../Loading";
 import Buttons from "./component/buttons/buttons.component";
+import Item from "../Item/item.component";
 
 
 class Sales extends React.Component {
@@ -17,13 +18,19 @@ class Sales extends React.Component {
     super(props);
     this.state = {
       isLoading: true,
+      isItem: true,
       requestType: "api/aparts/",
-      data: []
+      data: [],
+      idItem: ""
     };
   }
 
   handleDataChange = dataJson => {
     this.setState({ data: dataJson })
+  }
+
+  handleItemDataChange = (id) => {
+    this.setState({ idItem: id, isItem: false })
   }
 
 
@@ -49,11 +56,9 @@ class Sales extends React.Component {
 
 
   render() {
-    const {isLoading, data} = this.state
+    const {isLoading, isItem, data, dataItem} = this.state
     const dataAparts = data
-    console.log("dataApart", dataAparts)
-
-    return isLoading ? <Loading /> : (
+    return isLoading ? <Loading /> : ( isItem ? 
        <div>
        <Navigation/>
 
@@ -62,9 +67,13 @@ class Sales extends React.Component {
          <Carousel/>
        </CarouselContainer>
        <Buttons  onDataChange={this.handleDataChange} />
-       <SaleCardList dataAparts={dataAparts}/>
+       <SaleCardList dataAparts={dataAparts} onitem={this.handleItemDataChange} />
      <Footer/>
-</div>
+</div> 
+:
+<div>
+       <Item data={dataAparts}/>
+</div> 
     );
    }
  }
