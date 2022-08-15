@@ -17,9 +17,13 @@ class Sales extends React.Component {
     super(props);
     this.state = {
       isLoading: true,
-      requestType: "api/sale/",
+      requestType: "api/aparts/",
       data: []
     };
+  }
+
+  handleDataChange = data => {
+    this.setState({ data: data })
   }
 
 
@@ -57,7 +61,7 @@ class Sales extends React.Component {
        <CarouselContainer>
          <Carousel/>
        </CarouselContainer>
-       <Buttons ChangeData={this.ChangeData} />
+       <Buttons  onDataChange={this.handleDataChange} />
        <SaleCardList dataAparts={dataAparts}/>
      <Footer/>
 </div>
