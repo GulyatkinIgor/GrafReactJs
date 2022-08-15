@@ -22,8 +22,8 @@ class Sales extends React.Component {
     };
   }
 
-  handleDataChange = data => {
-    this.setState({ data: data })
+  handleDataChange = dataJson => {
+    this.setState({ data: dataJson })
   }
 
 
