@@ -21,7 +21,7 @@ class Sales extends React.Component {
       isItem: true,
       requestType: "api/aparts/",
       data: [],
-      idItem: ""
+      dataItem: {}
     };
   }
 
@@ -29,17 +29,14 @@ class Sales extends React.Component {
     this.setState({ data: dataJson })
   }
 
-  handleItemDataChange = (id) => {
-    this.setState({ idItem: id, isItem: false })
+  handleItemDataChange = item => {
+    this.setState({ dataItem: item, isItem: false })
   }
 
 
   getDataApparts = async () => {
     const {requestType} = this.state
-    console.log("fetch Sales", "start");
     const dataAppart = await axios.get(`http://localhost:3000/`+ requestType);
-    console.log("fetch Sales", "wait");
-    console.log("fetch Sales", dataAppart.request.response);
     const dataJson = JSON.parse(dataAppart.request.response);
     console.log("done  Sales", dataJson);
     this.setState({
@@ -57,7 +54,6 @@ class Sales extends React.Component {
 
   render() {
     const {isLoading, isItem, data, dataItem} = this.state
-    const dataAparts = data
     return isLoading ? <Loading /> : ( isItem ? 
        <div>
        <Navigation/>
@@ -67,12 +63,12 @@ class Sales extends React.Component {
          <Carousel/>
        </CarouselContainer>
        <Buttons  onDataChange={this.handleDataChange} />
-       <SaleCardList dataAparts={dataAparts} onitem={this.handleItemDataChange} />
+       <SaleCardList onItem={this.handleItemDataChange} dataAparts={data}/>
      <Footer/>
 </div> 
 :
 <div>
-       <Item data={dataAparts}/>
+       <Item item={dataItem}/>
 </div> 
     );
    }

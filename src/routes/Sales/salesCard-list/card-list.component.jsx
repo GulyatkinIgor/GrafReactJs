@@ -1,25 +1,28 @@
-import './card-list.styles.css';
+import Item from '../../Item/item.component';
+import './card-list.styles.css'
 
-const SaleCardList = ({ turnItem , dataAparts }) => {
+const SaleCardList = (currentItem) => {
+  
+  const dataAparts = currentItem.dataAparts
 
   const click = (item) => {
     console.log("PIZZZZZZZZZDA", item)
-    turnItem.onitem()
+    currentItem.onItem(item)
   }
 
   return(
     <div className='card-list'>
-        {dataAparts.map((data)=>{
+        {dataAparts.map((item)=>{
           return(
-        <button Id={data.Id._text} onClick={() => click(data)}>
+        <button onClick={() => click(item)}>
             <div>
         <a class="block relative h-48 rounded overflow-hidden">
           
         </a>
         <div class="mt-4">
-          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{data.Locality._text}</h3>
-          <h2 class="text-gray-900 title-font text-lg font-medium">{data.Title._text}</h2>
-          <p class="mt-1">{data.Price._text}</p>
+          <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{item.Locality._text}</h3>
+          <h2 class="text-gray-900 title-font text-lg font-medium">{item.Title._text}</h2>
+          <p class="mt-1">{item.Price._text}</p>
         </div>
       </div>
         </button>            
