@@ -5,15 +5,18 @@ import './card-list.styles.css';
 
 const SaleCardList = ({ dataAparts }) => {
 
+  function click(data){
+    console.log("ZALUPA",data)
+  }
+
   return(
     <div className='card-list'>
         {dataAparts.map((data,Id)=>{
-          return(            
+          return(
+        <a href="/Item">
             <div>
         <a class="block relative h-48 rounded overflow-hidden">
-          <CarouselContainer>
-            <Carousel/>
-          </CarouselContainer>
+          
         </a>
         <div class="mt-4">
           <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{data.Locality._text}</h3>
@@ -21,6 +24,7 @@ const SaleCardList = ({ dataAparts }) => {
           <p class="mt-1">{data.Price._text}</p>
         </div>
       </div>
+        </a>            
   
           )
 
