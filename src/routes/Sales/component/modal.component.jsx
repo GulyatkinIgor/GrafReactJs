@@ -1,7 +1,6 @@
 import React, { Component, useState } from "react";
 import Loading from "../../../Loading";
 import ImageGallery from 'react-image-gallery';
-@import "~react-image-gallery/styles/css/image-gallery.css";
 import "./modal.css"
 
 const images = [
