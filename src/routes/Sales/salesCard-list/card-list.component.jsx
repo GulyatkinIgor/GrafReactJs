@@ -1,7 +1,11 @@
 import Item from '../../Item/item.component';
 import './card-list.styles.css'
+import Modal from 'react-bootstrap/Modal';
+import ModalItem from '../component/modal.component';
+import { useState } from 'react';
 
 const SaleCardList = (currentItem) => {
+  const [modalActive, setModalActive] = useState(false)
   
   const dataAparts = currentItem.dataAparts
 
@@ -11,10 +15,11 @@ const SaleCardList = (currentItem) => {
   }
 
   return(
+    <div>
     <div className='card-list'>
         {dataAparts.map((item)=>{
           return(
-        <button onClick={() => click(item)}>
+            <button onClick={ () => click(item)}>
             <div>
         <a class="block relative h-48 rounded overflow-hidden">
           
@@ -27,11 +32,13 @@ const SaleCardList = (currentItem) => {
       </div>
         </button>            
   
-          )
-
-        })}
+  )
+  
+})}
      
+      
     </div>
+</div>
     )
 };
   
