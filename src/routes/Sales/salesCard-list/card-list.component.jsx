@@ -1,16 +1,18 @@
-import Item from '../../Item/item.component';
 import './card-list.styles.css'
-import Modal from 'react-bootstrap/Modal';
-import ModalItem from '../component/modal.component';
-import { useState } from 'react';
 
 const SaleCardList = (currentItem) => {
-  const [modalActive, setModalActive] = useState(false)
   
   const dataAparts = currentItem.dataAparts
 
+  const setTitleImage = (arrayImage) => {
+    var titleImage = "https://picsum.photos/id/1018/1000/600/"
+    Array.isArray(arrayImage) ? titleImage = arrayImage[0]._attributes.url : titleImage = arrayImage?._attributes?.url
+    console.log("HUI", arrayImage) 
+    return titleImage
+  }
+
   const click = (item) => {
-    console.log("PIZZZZZZZZZDA", item)
+    console.log("PIZZZZZZZZZDA", item.Images.Image[0]._attributes.url)
     currentItem.onItem(item)
   }
 
@@ -18,11 +20,14 @@ const SaleCardList = (currentItem) => {
     <div>
     <div className='card-list'>
         {dataAparts.map((item)=>{
+          const arrayImage = item.Images.Image
+          const titleImage = setTitleImage(arrayImage)
+          console.log (item, )
           return(
             <button onClick={ () => click(item)}>
             <div>
         <a class="block relative h-48 rounded overflow-hidden">
-          
+          <img src={titleImage}></img>
         </a>
         <div class="mt-4">
           <h3 class="text-gray-500 text-xs tracking-widest title-font mb-1">{item.Locality._text}</h3>
