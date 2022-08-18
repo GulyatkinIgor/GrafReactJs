@@ -34,18 +34,16 @@ console.log(dataImages)
   return props.isLoad ? <Loading/> : (
     <div className={props.active ? "modal active" : "modal"} onClick={()=> props.setActive (false)}>
       <div className={props.active ? "modalContent active" : "modalContent"} onClick={e => e.stopPropagation()}>
-        <div className="carousel">
+        <li className="carousel">
           <ImageGallery 
           items={dataImages}
           defaultImage="https://unsplash.it/400/300/?image=511"
           showBullets={true}
           showIndex={true}
-          showThumbnails={true}
-          lazyLoad={true}
           showPlayButton={false} 
-          thumbnailPosition="left"
+          showFullscreenButton={false}
           startIndex={0}/>
-        </div>
+        </li>
         <h1>{props.data.Description._text}</h1>
       </div>
     </div>
