@@ -30,3 +30,11 @@
 .modalContent.active {
     transform: scale(1);
 }
+
+.carousel{
+    top: 0;
+    right: 0;
+    width: 720px;
+    height: 480px;
+    background-color: black;
+}
