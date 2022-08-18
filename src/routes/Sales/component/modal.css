@@ -37,4 +37,6 @@
     width: 720px;
     height: 480px;
     background-color: black;
+    align-items: center;
+    justify-content: center;
 }

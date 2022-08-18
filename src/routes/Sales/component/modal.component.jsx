@@ -43,9 +43,7 @@ console.log(dataImages)
           showThumbnails={true}
           lazyLoad={true}
           showPlayButton={false} 
-          thumbnailPosition={"left"}
-          originalHeight="480px"
-          originalWidth="720px"
+          thumbnailPosition="left"
           startIndex={0}/>
         </div>
         <h1>{props.data.Description._text}</h1>
