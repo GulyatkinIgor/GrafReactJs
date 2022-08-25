@@ -22,7 +22,7 @@ class Sales extends React.Component {
       isLoading: true,
       isItem: false,
       loadingItem: true,
-      requestType: "api/aparts/",
+      requestType: "api/sale/",
       data: [],
       dataItem: json
     };

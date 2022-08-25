@@ -15,21 +15,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
+/* 
 .image-gallery {
-  width: 40%;
-  height: auto;
+  width: 720px;
+  height: 480px;
 }
-
+*/
 .image-gallery-slide img {
-  width: 100%;
-  height: auto;
-  max-height: 40vh;
-  object-fit: cover;
-  overflow: hidden;
-  object-position: center center;
+  width: 50vw;
+    height: 50vh;
 }
 
 .fullscreen .image-gallery-slide img {
-  max-height: 40vh;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
