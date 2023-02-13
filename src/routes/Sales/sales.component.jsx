@@ -34,29 +34,25 @@ class Sales extends React.Component {
 
   handleItemDataChange = item => {
     this.setState({ dataItem: item, isItem: true, loadingItem: false })
-    console.log("data push", item)
   }
 
   hideItem = () => {
     this.setState ({
       isItem: false
     })
-    console.log("is ITEM FALSE")
   }
 
   showItem = () => {
     this.setState({
       isItem: true
     })
-    console.log("is ITEM TRUE")
   }
 
 
   getDataApparts = async () => {
     const {requestType} = this.state
-    const dataAppart = await axios.get(`http://localhost:3000/`+ requestType);
+    const dataAppart = await axios.get(`http://localhost:3500/`+ requestType);
     const dataJson = JSON.parse(dataAppart.request.response);
-    console.log("done  Sales", dataAppart);
     this.setState({
       data: dataJson,
       isLoading: false
@@ -75,12 +71,6 @@ class Sales extends React.Component {
     return isLoading ? <Loading /> : 
        <div>
        <Navigation/>
-
-       Продажи Страница
-       
-       <CarouselContainer>
-         <Carousel/>
-       </CarouselContainer>
        <Buttons  onDataChange={this.handleDataChange} />
        <SaleCardList onItem={this.handleItemDataChange} dataAparts={data} hide={this.hideItem} showItem={this.showItem} />
        <ModalItem isLoad={loadingItem} active={isItem} setActive={this.hideItem} data={dataItem}/>

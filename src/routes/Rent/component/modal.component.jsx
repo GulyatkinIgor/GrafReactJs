@@ -6,7 +6,6 @@ import "./modal.css"
 
 
 const ModalItem = (props) => {
-console.log("ITEM DATA", props.data)
 
 const setArrayImages = (data) => {
   var arrObjects = []
