@@ -4,7 +4,7 @@ import axios from "axios";
 const Buttons = (updateData) => {
 
     const chooseType = async (request) => {
-        const requestType = "api/sale/"
+        const requestType = "api/rent/"
         const dataAppart = await axios.get(`http://localhost:3500/`+ requestType + request);
         const dataAparts = JSON.parse(dataAppart.request.response);
         updateData.onDataChange(dataAparts)
